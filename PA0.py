@@ -1,5 +1,8 @@
 import pygame, sys, random
 
+score = 0
+start = True
+
 def ball_movement():
     """
     Handles the movement of the ball and collision detection with the player and screen boundaries.
