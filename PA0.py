@@ -24,10 +24,10 @@ def ball_movement():
     # Ball collision with the player paddle
     if ball.colliderect(player):
         if abs(ball.bottom - player.top) < 10:  # Check if ball hits the top of the paddle
-            # TODO Task 2: Fix score to increase by 1
+            # Done Task 2: Fix score to increase by 1
             score += 1  # Increase player score
             ball_speed_y *= -1  # Reverse ball's vertical direction
-            # TODO Task 6: Add sound effects HERE
+            # Done Task 6: Add sound effects HERE
             sound = pygame.mixer.Sound("SOUNDS/PONGSOUND.wav")
             sound.play()
 
@@ -80,7 +80,7 @@ bg_color = pygame.Color('grey12')
 
 # Game Rectangles (ball and player paddle)
 ball = pygame.Rect(screen_width / 2 - 15, screen_height / 2 - 15, 30, 30)  # Ball (centered)
-# TODO Task 1 Make the paddle bigger
+# Done Task 1 Make the paddle bigger
 player_height = 15
 player_width = 200
 player = pygame.Rect(screen_width/2 - 45, screen_height - 20, player_width, player_height)  # Player paddle
@@ -128,7 +128,7 @@ while True:
     morado = pygame.Color("darkorchid1")
     screen.fill(bg_color)  # Clear screen with background color
     pygame.draw.rect(screen, morado, player)  # Draw player paddle
-    # TODO Task 3: Change the Ball Color
+    # Done Task 3: Change the Ball Color
     pygame.draw.ellipse(screen, morado, ball)  # Draw ball
     player_text = basic_font.render(f'{score}', False, light_grey)  # Render player score
     screen.blit(player_text, (screen_width/2 - 15, 10))  # Display score on screen
