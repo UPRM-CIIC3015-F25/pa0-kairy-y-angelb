@@ -152,6 +152,12 @@ while True:
     pygame.draw.ellipse(screen, morado, ball)  # Draw ball
     player_text = basic_font.render(f'{score}', False, light_grey)  # Render player score
     screen.blit(player_text, (screen_width/2 - 15, 10))  # Display score on screen
+# Player score rendering
+    player_text = basic_font.render(f"Score: {score}", False, (10, 245, 200))
+    high_score_text = basic_font.render(f"High Score: {high_score}", False, (255, 135, 255))
+
+    screen.blit(player_text, (20, 20))
+    screen.blit(high_score_text, (20,60))
 
     # Update display
     pygame.display.flip()
