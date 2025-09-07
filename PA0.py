@@ -2,7 +2,9 @@ import pygame, sys, random
 
 score = 0
 start = True
-
+pygame.mixer.init()
+pygame.mixer.music.load("SOUNDS/A Lonely Cherry Tree.mp3")
+pygame.mixer.music.play(-1)
 def ball_movement():
     """
     Handles the movement of the ball and collision detection with the player and screen boundaries.
