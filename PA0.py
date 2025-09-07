@@ -2,7 +2,9 @@ import pygame, sys, random
 
 score = 0
 start = True
-
+pygame.mixer.init()
+pygame.mixer.music.load("SOUNDS/A Lonely Cherry Tree.mp3")
+pygame.mixer.music.play(-1)
 def ball_movement():
     """
     Handles the movement of the ball and collision detection with the player and screen boundaries.
@@ -93,6 +95,8 @@ clock = pygame.time.Clock()
 screen_width = 500  # Screen width (can be adjusted)
 screen_height = 500  # Screen height (can be adjusted)
 screen = pygame.display.set_mode((screen_width, screen_height))
+background=pygame.image.load("BACKGROUND/istockphoto-1403514917-612x612.jpg") #BACKGROUND IMAGE
+background=pygame.transform.scale(background, (screen_width,screen_height)) #ajuste de resolusion
 pygame.display.set_caption('Pong')  # Set window title
 
 # Colors
