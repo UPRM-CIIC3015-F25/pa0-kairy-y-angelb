@@ -43,6 +43,26 @@ def ball_movement():
     if ball.bottom > screen_height:
         restart()  # Reset the game
 
+# High score BONUS
+high_score_file: str = "highscore.txt"
+high_score = 0
+
+def load_high_score():
+    global high_score
+    try:
+        with open(high_score_file, "r") as file:
+            high_score = int(file.read().strip())
+    except (FileNotFoundError, ValueError):
+        high_score = 0
+def save_high_score():
+    with open(high_score_file, "w") as file:
+        file.write(str(high_score))
+
+score = 0
+start = True
+
+load_high_score()
+
 def player_movement():
     """
     Handles the movement of the player paddle, keeping it within the screen boundaries.
